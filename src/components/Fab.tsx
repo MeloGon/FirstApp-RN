@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableNativeFeedback, TouchableOpacity, View } from 'react-native'
 
 interface Props {
     title: string,
@@ -10,14 +10,18 @@ interface Props {
 
 export const Fab = (props: Props) => {
     return (
-        <TouchableOpacity
-            style={[styles.fabLocation, props.position == 'br' ? styles.right : styles.left]}
-            onPress={props.onPress}
+        <View style={[styles.fabLocation, props.position == 'br' ? styles.right : styles.left]}
         >
-            <View style={styles.fab}>
-                <Text style={styles.fabText}> {props.title} </Text>
-            </View>
-        </TouchableOpacity>
+
+            <TouchableNativeFeedback
+                onPress={props.onPress}
+                background ={TouchableNativeFeedback.Ripple('#28425B',true,30)}
+            >
+                <View style={styles.fab}>
+                    <Text style={styles.fabText}> {props.title} </Text>
+                </View>
+            </TouchableNativeFeedback>
+        </View>
     )
 }
 
