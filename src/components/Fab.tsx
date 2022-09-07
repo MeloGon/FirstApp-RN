@@ -12,7 +12,7 @@ export const Fab = (props: Props) => {
 
     const ios = () => {
         return (
-            <TouchableOpacity style={[styles.fabLocation, props.position == 'br' ? styles.right : styles.left]}
+            <TouchableOpacity style={[styles.fabLocation, props.position == 'br' ? styles.right : styles.left]} activeOpacity ={0.8}
             >
                 <View style={styles.fab}>
                     <Text style={styles.fabText}> {props.title} </Text>
