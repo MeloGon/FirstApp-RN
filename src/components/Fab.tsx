@@ -19,7 +19,7 @@ export const Fab = (props: Props) => {
                     <Text style={styles.fabText}> {props.title} </Text>
                 </View>
 
-            </TouchableOpacity>
+            </TouchableOpacity> 
         )
 
     }
